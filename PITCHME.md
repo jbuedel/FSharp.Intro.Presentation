@@ -1,4 +1,4 @@
-#### Introduction To F#
+#### Introduction To F\#
 ##### Functional Programming Series
 
 ---
@@ -6,8 +6,6 @@
 ### Why functional programming?
 
 Learning about functional programming will make us better C family programmers. 
-
-Our C(++|#)\0 code will get better!
 
 ---
 
