@@ -417,7 +417,10 @@ let toPolyLine features =
 
 ### Other features
 
+Look at the koans
+* Koan clone url
 * `|>` pipelining
-* Class declaration [comparing f# to c#](https://fsharpforfunandprofit.com/csharp/)
-* Function currying
+* >> operator ?
+* Partial application
+* 
 
