@@ -428,7 +428,7 @@ let foo tup =
 ```
 @[2](this is destructuring)
 
-`t` is of type `int*string`
+`tup` is of type `int*string`
 
 Call it like so
 ```
@@ -455,9 +455,9 @@ Destructuring a list
 ```
 let foo lst =
   let fst :: rst = lst
-  fst + " " + rst.Length.ToString()
+  fst + " " + rst.Length.ToString() 
 
-foo ["josh"; "buedel", "f#"]
+foo ["josh"; "buedel", "f#"] // prints "josh 2"
 ```  
 
 With inline destructuring
@@ -465,7 +465,7 @@ With inline destructuring
 ```
 let foo (fst :: rst) =
   fst + " " + rst.Length.ToString()
-foo ["josh"; "buedel", "f#"]
+foo ["josh"; "buedel", "f#"] // prints "josh 2"
 ```
 Note this is a compliler warning. Because empty list.
 
@@ -479,13 +479,19 @@ Another built in data type.
 type Person = {firstName: string; lastName: string; age: int}
 ```
 
++++
+### Records
+
+```
+type Person = {firstName: string; lastName: string; age: int}
+```
+
 Declare an instance
 ```
 let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
 ```
 @[2](No type specified! Compiler uses record labels to figure it out.)
-
-Looks a lot like C# anonymous objects. 
+@[2](Looks a lot like C# anonymous objects. ) 
 
 +++
 ### Records
@@ -500,6 +506,7 @@ let name = josh.firstName
 or by destructuring
 ```
 let {firstName = name, age = age} = josh 
+printf "%s is %i years old" firstName age
 ```
 +++
 ### Records
@@ -508,7 +515,7 @@ Change a value
 ```
 let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
 
-let gibson = { josh with firstName = "Gibson"}
+let gibson = { josh with firstName = "Gibson", age = 11}
 ```
 
 Remember, it's immutable.
@@ -550,9 +557,14 @@ Website: https://github.com/ChrisMarinos/FSharpKoans
 
 ### Other features  
 
+for future presentations
+
 * match expressions in depth
-* `|>` pipelining
-* >> operator ?
+* function combination 
+  * `>>` operator 
+
+Review
 * Partial application
+* `|>` pipelining
 
 ---
