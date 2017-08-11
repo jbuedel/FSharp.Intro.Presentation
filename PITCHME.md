@@ -414,6 +414,9 @@ let toPolyLine features =
 @[14]
 
 ---
+### Begin part II
+
+---
 ### Destructuring
 
 We know `(7, "josh")` creates a tuple.
