@@ -510,16 +510,21 @@ let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
 
 let gibson = { josh with firstName = "Gibson"}
 ```
+
+Remember, it's immutable.
+
 +++
 ### Records
 
 Destructuring a record
 ```
 let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
-
 let gibson = { josh with firstName = "Gibson"}
+
 let ageDiff person1 person2 = 
   person1.age - person2.age
+
+ageDiff josh gibson
 ```
 
 or
@@ -528,6 +533,7 @@ or
 let ageDiff {age = age1;} {age = age2;} =
   age1 - age2
 
+ageDiff josh gibson
 ```
 
 ---
