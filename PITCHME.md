@@ -414,13 +414,133 @@ let toPolyLine features =
 @[14]
 
 ---
+### Destructuring
 
-### Other features
+We know `(7, "josh")` creates a tuple.
 
-Look at the koans
-* Koan clone url
+```
+let foo tup =
+  let num,str = tup
+  str + " " + num
+```
+---
+@[2](this is destructuring)
+
+`t` is of type `int*string`
+
+Call it like so
+```
+foo (7, "josh")
+```
+
++++
+### Destructuring
+
+We can destructure inline, right in the parameter list.
+
+```
+let foo (num,str) =
+  str + " " + num
+```
+
+The fact that we take a tuple is an implementation detail. It's still there. It just doesn't have a name anymore.
+
++++
+### Destructuring
+
+Destructuring a list
+
+```
+let foo lst =
+  let fst :: rst = lst
+  fst + " " + rst.Length.ToString()
+
+foo ["josh"; "buedel", "f#"]
+```  
+
+With inline destructuring
+
+```
+let foo (fst :: rst) =
+  fst + " " + rst.Length.ToString()
+foo ["josh"; "buedel", "f#"]
+```
+Note this is a compliler warning. Because empty list.
+
+Destructuring is pattern matching, and we haven't accounted for all possible patterns. 
+
+---
+### Records
+
+Another built in data type.
+```
+type Person = {firstName: string; lastName: string; age: int}
+
+let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
+```
+@[3](No type specified! Compiler uses record labels to figure it out.)
+
+Looks a lot like C# anonymous objects. 
+
++++
+### Records
+
+Get at the values
+```
+let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
+
+let name = josh.firstName
+```
+
+or by destructuring
+```
+let {firstName = name, age = age} = josh 
+```
++++
+### Records
+
+Change a value
+```
+let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
+
+let gibson = { josh with firstName = "Gibson"}
+```
+### Records
+
+Destructuring a record
+```
+let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
+
+let gibson = { josh with firstName = "Gibson"}
+let ageDiff person1 person2 = 
+  person1.age - person2.age
+```
+
+or
+
+```
+let ageDiff {age = age1;} {age = age2;} =
+  age1 - age2
+
+```
+
+---
+### F# Koans
+
+
+Website: https://github.com/ChrisMarinos/FSharpKoans
+
+* Clone this: `git@github.com:ChrisMarinos/FSharpKoans.git`
+* Set `FSharpKoans` as start up project.
+* `F5`
+
+---
+
+### Other features  
+
+* match expressions in depth
 * `|>` pipelining
 * >> operator ?
 * Partial application
-* 
 
+---
