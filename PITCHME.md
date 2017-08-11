@@ -477,10 +477,13 @@ Destructuring is pattern matching, and we haven't accounted for all possible pat
 Another built in data type.
 ```
 type Person = {firstName: string; lastName: string; age: int}
+```
 
+Declare an instance
+```
 let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
 ```
-@[3](No type specified! Compiler uses record labels to figure it out.)
+@[2](No type specified! Compiler uses record labels to figure it out.)
 
 Looks a lot like C# anonymous objects. 
 
