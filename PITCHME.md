@@ -426,7 +426,6 @@ let foo tup =
   let num,str = tup
   str + " " + num
 ```
----
 @[2](this is destructuring)
 
 `t` is of type `int*string`
