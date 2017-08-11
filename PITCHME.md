@@ -510,6 +510,7 @@ let josh = {firstName = "Josh"; lastName = "Buedel"; age = 43}
 
 let gibson = { josh with firstName = "Gibson"}
 ```
++++
 ### Records
 
 Destructuring a record
